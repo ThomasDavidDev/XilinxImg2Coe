@@ -2,7 +2,6 @@
 import argparse
 import os
 import cv2
-import numpy as np
 
 # construct the argument parser and parse the arguments
 parser = argparse.ArgumentParser()
@@ -27,14 +26,13 @@ print("Blue Channel: {0}".format(pathBlue))
 
 # open the image and generate red, green and black array
 imageInput = cv2.imread(pathInput, cv2.IMREAD_COLOR)
-imageReshape = imageInput.reshape((-1, 3))
-imageRedGreenBlue = np.transpose(imageReshape)
+imageReshape = imageInput.reshape((3, -1))
 
 # generate coe files
 for color in range(3):
     print("Exporting {0}".format("red" if color == 0 else "green" if color == 1 else "blue"))
 
-    colorArray = imageRedGreenBlue[color]
+    colorArray = imageReshape[color]
     colorOuput = pathOutput[color]
     if os.path.exists(colorOuput):
         os.remove(colorOuput)
