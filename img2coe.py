@@ -52,7 +52,7 @@ for color in range(3):
     file.write(";************ .COE file generator - By Thomas Devoogdt ************\n")
     file.write(";******************************************************************\n")
     file.write("; v1.0\n")
-    file.write("memory_initialization_radix={0}\n".format(16))
+    file.write("memory_initialization_radix={0}\n".format(2))
     file.write("memory_initialization_vector=\n")
 
     length = len(colorArray)
