@@ -4,4 +4,4 @@ Xilinx Img 2 Coe converter
 
 usage:
 
-python img2coe.py -i "../folder/img.jpg" -r "../folder/coe/red.coe"  -g "../folder/coe/green.coe"  -b "../folder/coe/blue.coe" -d 5
+py img2coe.py -i "img.jpg" -r "red.coe"  -g "green.coe"  -b "blue.coe" -d 4
